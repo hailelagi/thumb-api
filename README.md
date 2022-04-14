@@ -1,5 +1,16 @@
 # Thumb
-Thumbnail processing/generating graphql server.
+Thumbnail processing/generating api. This server has been configured to respond only to
+graphql requests via `application/graphql` or `application/json` see the
+[absinthe configuration](https://hexdocs.pm/absinthe/plug-phoenix.html#general-usage).
+
+# Schema
+```graphql
+{
+  createThumbnail(image) {
+    id
+  }
+}
+```
 
 To start your Phoenix server:
 

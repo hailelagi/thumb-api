@@ -45,4 +45,10 @@ defmodule ThumbWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug ThumbWeb.Router
+  plug Plug.Parsers,
+       parsers: [:urlencoded, :multipart, :json],
+       pass: ["*/*"],
+       json_decoder: Jason
+  plug Absinthe.Plug,
+       schema: ThumbWeb.Schema
 end

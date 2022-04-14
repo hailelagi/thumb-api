@@ -1,12 +1,14 @@
 defmodule ThumbWeb.Router do
   use ThumbWeb, :router
 
-  pipeline :api do
+  pipeline :graphql_api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", ThumbWeb do
-    pipe_through :api
+  scope "/" do
+    pipe_through :graphql_api
+
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: ThumbWeb.Schema
   end
 
   # Enables LiveDashboard only for development
