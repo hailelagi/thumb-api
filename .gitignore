@@ -20,10 +20,15 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-tic_tac_toe-*.tar
-
+thumb-api*.tar
 
 # Temporary files for e.g. tests
 /tmp
 
+# intelliJ
 .idea
+
+.elixir_ls
+
+.DS_Store
+
